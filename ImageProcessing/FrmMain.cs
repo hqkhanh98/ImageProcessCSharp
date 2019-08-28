@@ -14,12 +14,17 @@ namespace ImageProcessing
     {
         private Boolean stateChooseImage = false;
         private int offset = 3;
-        private Bitmap bmSave;
+        private Bitmap bmSave, bmGraySave;
         public FrmMain()
         {
             InitializeComponent();
             btn3x3.Visible = false;
             btn5x5.Visible = false;
+            imageGrayScaleToolStripMenuItem.Enabled = false;
+            imageRGBToolStripMenuItem.Enabled = false;
+            convertToGrayToolStripMenuItem.Enabled = false;
+            convertToSEPIAToolStripMenuItem.Enabled = false;
+            filterToolStripMenuItem.Enabled = false;
         }
         /**
          * @ Author : Huỳnh Quốc Khánh
@@ -63,7 +68,13 @@ namespace ImageProcessing
                 //Tải ảnh lên pictureBox
                 
                 picOrigin.Image = imgLoad;
+
+                imageRGBToolStripMenuItem.Enabled = true;
+                convertToGrayToolStripMenuItem.Enabled = true;
+                convertToSEPIAToolStripMenuItem.Enabled = true;
+                filterToolStripMenuItem.Enabled = true;
                 stateChooseImage = true;
+
                 //txtHinh.Text = Path.GetFileName(openfile.FileName);
             }
         }
@@ -126,6 +137,8 @@ namespace ImageProcessing
                 MessageBox.Show("Process Complete!", "INFO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Load Image
                 picResult.Image = imgResult;
+                bmGraySave = (Bitmap)imgResult;
+                imageGrayScaleToolStripMenuItem.Enabled = true;
             }
             else
             {
@@ -143,6 +156,41 @@ namespace ImageProcessing
                 MessageBox.Show("Process Complete!", "INFO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Load Image
                 picResult.Image = imgResult;
+            }
+            else
+            {
+                MessageBox.Show("Image was not choose !", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void imageGrayScaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (stateChooseImage == true)
+            {
+                Bitmap result = (Bitmap)picOrigin.Image;
+
+                Image imgResult = ProcessImage.getOffsetGrayScale(result);
+                MessageBox.Show("Process Complete!", "INFO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Load Image
+                picResult.Image = imgResult;
+            }
+            else
+            {
+                MessageBox.Show("Image was not choose !", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void imageRGBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (stateChooseImage == true)
+            {
+                Bitmap result = bmGraySave;
+
+                Image imgResult = ProcessImage.getOffsetGrayScale(result);
+                MessageBox.Show("Process Complete!", "INFO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Load Image
+                picResult.Image = imgResult;
+                picOrigin.Image = bmGraySave;
             }
             else
             {

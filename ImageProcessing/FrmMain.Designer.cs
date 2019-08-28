@@ -35,15 +35,18 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.openImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.convertToGrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertToSEPIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterMedianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterAvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn3x3 = new System.Windows.Forms.Button();
             this.btn5x5 = new System.Windows.Forms.Button();
-            this.convertToSEPIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.offsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageRGBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageGrayScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picOrigin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -90,26 +93,33 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(153, 6);
             // 
             // openImageToolStripMenuItem
             // 
             this.openImageToolStripMenuItem.Name = "openImageToolStripMenuItem";
-            this.openImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openImageToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.openImageToolStripMenuItem.Text = "Choose Image..";
             this.openImageToolStripMenuItem.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(153, 6);
+            // 
+            // clearToolStripMenuItem
+            // 
+            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.clearToolStripMenuItem.Text = "Clear";
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.convertToGrayToolStripMenuItem,
             this.convertToSEPIAToolStripMenuItem,
-            this.filterToolStripMenuItem});
+            this.filterToolStripMenuItem,
+            this.offsetToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.toolsToolStripMenuItem.Text = "Tool";
@@ -120,6 +130,13 @@
             this.convertToGrayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.convertToGrayToolStripMenuItem.Text = "Convert To Gray";
             this.convertToGrayToolStripMenuItem.Click += new System.EventHandler(this.convertToGrayToolStripMenuItem_Click);
+            // 
+            // convertToSEPIAToolStripMenuItem
+            // 
+            this.convertToSEPIAToolStripMenuItem.Name = "convertToSEPIAToolStripMenuItem";
+            this.convertToSEPIAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.convertToSEPIAToolStripMenuItem.Text = "Convert To SEPIA";
+            this.convertToSEPIAToolStripMenuItem.Click += new System.EventHandler(this.convertToSEPIAToolStripMenuItem_Click);
             // 
             // filterToolStripMenuItem
             // 
@@ -164,18 +181,28 @@
             this.btn5x5.UseVisualStyleBackColor = true;
             this.btn5x5.Click += new System.EventHandler(this.btn5x5_Click);
             // 
-            // convertToSEPIAToolStripMenuItem
+            // offsetToolStripMenuItem
             // 
-            this.convertToSEPIAToolStripMenuItem.Name = "convertToSEPIAToolStripMenuItem";
-            this.convertToSEPIAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.convertToSEPIAToolStripMenuItem.Text = "Convert To SEPIA";
-            this.convertToSEPIAToolStripMenuItem.Click += new System.EventHandler(this.convertToSEPIAToolStripMenuItem_Click);
+            this.offsetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imageRGBToolStripMenuItem,
+            this.imageGrayScaleToolStripMenuItem});
+            this.offsetToolStripMenuItem.Name = "offsetToolStripMenuItem";
+            this.offsetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.offsetToolStripMenuItem.Text = "Offset";
             // 
-            // clearToolStripMenuItem
+            // imageRGBToolStripMenuItem
             // 
-            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clearToolStripMenuItem.Text = "Clear";
+            this.imageRGBToolStripMenuItem.Name = "imageRGBToolStripMenuItem";
+            this.imageRGBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imageRGBToolStripMenuItem.Text = "Image RGB";
+            this.imageRGBToolStripMenuItem.Click += new System.EventHandler(this.imageRGBToolStripMenuItem_Click);
+            // 
+            // imageGrayScaleToolStripMenuItem
+            // 
+            this.imageGrayScaleToolStripMenuItem.Name = "imageGrayScaleToolStripMenuItem";
+            this.imageGrayScaleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imageGrayScaleToolStripMenuItem.Text = "Image Gray Scale";
+            this.imageGrayScaleToolStripMenuItem.Click += new System.EventHandler(this.imageGrayScaleToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -218,6 +245,9 @@
         private System.Windows.Forms.Button btn5x5;
         private System.Windows.Forms.ToolStripMenuItem convertToSEPIAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem offsetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageRGBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageGrayScaleToolStripMenuItem;
     }
 }
 

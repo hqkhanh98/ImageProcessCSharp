@@ -60,7 +60,7 @@ namespace ImageProcessing
             int[] G = new int[size];
             int[] B = new int[size];
 
-            //=============================================//
+            //===================       3X3     =======================//
             if (offset == 3 ) {
                 //Duyệt lần lượt toàn bộ điểm ảnh
                 for (i = 1; i < width - 1; i++)
@@ -120,7 +120,8 @@ namespace ImageProcessing
                     }
                 }
             }
-            else if( offset == 5 )
+            //===================       5X5     =======================//
+            else if ( offset == 5 )
             {
                 //Duyệt lần lượt toàn bộ điểm ảnh
                 for (i = 2; i < width - 2; i++)

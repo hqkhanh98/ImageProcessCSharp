@@ -71,6 +71,7 @@ namespace ImageProcessing
                     G = bitmap.GetPixel(i, j).G;
                     B = bitmap.GetPixel(i, j).B;
                     sepia = (int)((R * 0.299) + (G * 0.587) + (B * 0.144));
+                    //Kiểm tra điều kiện
                     if (sepia > 206)
                     {
                         R = 255;
@@ -90,8 +91,67 @@ namespace ImageProcessing
                         G = sepia - 14;
                     }
                     result.SetPixel(i, j, Color.FromArgb(R, G, B));
-
+                    //Reset các giá trị
                     R = 0; G = 0; B = 0; sepia = 0;
+                }
+            }
+            return result;
+        }
+        public static Bitmap getOffsetGRB(Bitmap bitmap)
+        {
+            //Khởi tạo
+            int width = bitmap.Width;
+            int height = bitmap.Height;
+            int size = width * height;
+            int i, j;
+            int R, G, B, offsetR, offsetG, offsetB;
+            Bitmap result = new Bitmap(bitmap.Width, bitmap.Height);
+
+            for (i = 0; i < width; i++)
+            {
+                for (j = 0; j < height; j++)
+                {
+                    R = bitmap.GetPixel(i, j).R;
+                    G = bitmap.GetPixel(i, j).G;
+                    B = bitmap.GetPixel(i, j).B;
+
+                    offsetR = 255 - R;
+                    offsetG = 255 - G;
+                    offsetB = 255 - B;
+
+                    result.SetPixel(i, j, Color.FromArgb(offsetR, offsetG, offsetB));
+                    //Reset các giá trị
+                    R = 0; G = 0; B = 0; offsetR = 0; offsetG = 0; offsetB = 0;
+                }
+            }
+            return result;
+        }
+
+        public static Bitmap getOffsetGrayScale(Bitmap bitmap)
+        {
+            //Khởi tạo
+            int width = bitmap.Width;
+            int height = bitmap.Height;
+            int size = width * height;
+            int i, j;
+            int R, G, B, offsetR, offsetG, offsetB;
+            Bitmap result = new Bitmap(bitmap.Width, bitmap.Height);
+
+            for (i = 0; i < width; i++)
+            {
+                for (j = 0; j < height; j++)
+                {
+                    R = bitmap.GetPixel(i, j).R;
+                    G = bitmap.GetPixel(i, j).G;
+                    B = bitmap.GetPixel(i, j).B;
+
+                    offsetR = 255 - R;
+                    offsetG = 255 - G;
+                    offsetB = 255 - B;
+
+                    result.SetPixel(i, j, Color.FromArgb(offsetR, offsetG, offsetB));
+                    //Reset các giá trị
+                    R = 0; G = 0; B = 0; offsetR = 0; offsetG = 0; offsetB = 0;
                 }
             }
             return result;
