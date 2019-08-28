@@ -6,10 +6,10 @@ If you have question please contact me by mail
 #hqkhanhit@gmail.com
 Do not hesitate ! <3. **
 
-######Processing \n
+######Processing *
 Complete Project (20%..)
-######Next plan \n
+######Next plan *
 Write document for project
-
+*
 ## Thanks for visit my github
 
