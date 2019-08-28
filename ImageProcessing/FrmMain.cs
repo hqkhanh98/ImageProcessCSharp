@@ -180,6 +180,16 @@ namespace ImageProcessing
             }
         }
 
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            picResult.Image = null;
+            picOrigin.Image = null;
+            btn3x3.Visible = false;
+            btn5x5.Visible = false;
+            stateChooseImage = false;
+            offset = 3;
+        }
+
         private void imageRGBToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (stateChooseImage == true)

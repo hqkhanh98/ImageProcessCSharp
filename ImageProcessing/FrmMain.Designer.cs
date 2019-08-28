@@ -47,6 +47,8 @@
             this.offsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageRGBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageGrayScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picOrigin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -110,8 +112,9 @@
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clearToolStripMenuItem.Text = "Clear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -204,12 +207,34 @@
             this.imageGrayScaleToolStripMenuItem.Text = "Image Gray Scale";
             this.imageGrayScaleToolStripMenuItem.Click += new System.EventHandler(this.imageGrayScaleToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(272, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Origin Image";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(942, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Result Image";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1282, 507);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn5x5);
             this.Controls.Add(this.btn3x3);
             this.Controls.Add(this.picResult);
@@ -248,6 +273,8 @@
         private System.Windows.Forms.ToolStripMenuItem offsetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imageRGBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imageGrayScaleToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
