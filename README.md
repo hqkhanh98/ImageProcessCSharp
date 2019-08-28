@@ -6,6 +6,8 @@ If you have question please contact me by mail
 #hqkhanhit@gmail.com
 Do not hesitate ! <3. **
 
+***Project use Microsoft Visual Studio 2017***
+
 **Processing**
 
 > Complete Project (20%..)
