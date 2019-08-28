@@ -42,13 +42,15 @@
             this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterMedianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterAvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn3x3 = new System.Windows.Forms.Button();
-            this.btn5x5 = new System.Windows.Forms.Button();
             this.offsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageRGBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageGrayScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn3x3 = new System.Windows.Forms.Button();
+            this.btn5x5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.check = new System.Windows.Forms.Label();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picOrigin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -74,7 +76,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fIleToolStripMenuItem,
-            this.toolsToolStripMenuItem});
+            this.toolsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1282, 24);
@@ -112,7 +115,7 @@
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
@@ -164,6 +167,29 @@
             this.filterAvToolStripMenuItem.Text = "Filter Average";
             this.filterAvToolStripMenuItem.Click += new System.EventHandler(this.btnAvg_Click);
             // 
+            // offsetToolStripMenuItem
+            // 
+            this.offsetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imageRGBToolStripMenuItem,
+            this.imageGrayScaleToolStripMenuItem});
+            this.offsetToolStripMenuItem.Name = "offsetToolStripMenuItem";
+            this.offsetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.offsetToolStripMenuItem.Text = "Offset";
+            // 
+            // imageRGBToolStripMenuItem
+            // 
+            this.imageRGBToolStripMenuItem.Name = "imageRGBToolStripMenuItem";
+            this.imageRGBToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.imageRGBToolStripMenuItem.Text = "Image RGB";
+            this.imageRGBToolStripMenuItem.Click += new System.EventHandler(this.imageRGBToolStripMenuItem_Click);
+            // 
+            // imageGrayScaleToolStripMenuItem
+            // 
+            this.imageGrayScaleToolStripMenuItem.Name = "imageGrayScaleToolStripMenuItem";
+            this.imageGrayScaleToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.imageGrayScaleToolStripMenuItem.Text = "Image Gray Scale";
+            this.imageGrayScaleToolStripMenuItem.Click += new System.EventHandler(this.imageGrayScaleToolStripMenuItem_Click);
+            // 
             // btn3x3
             // 
             this.btn3x3.Location = new System.Drawing.Point(604, 148);
@@ -183,29 +209,6 @@
             this.btn5x5.Text = "5x5";
             this.btn5x5.UseVisualStyleBackColor = true;
             this.btn5x5.Click += new System.EventHandler(this.btn5x5_Click);
-            // 
-            // offsetToolStripMenuItem
-            // 
-            this.offsetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.imageRGBToolStripMenuItem,
-            this.imageGrayScaleToolStripMenuItem});
-            this.offsetToolStripMenuItem.Name = "offsetToolStripMenuItem";
-            this.offsetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.offsetToolStripMenuItem.Text = "Offset";
-            // 
-            // imageRGBToolStripMenuItem
-            // 
-            this.imageRGBToolStripMenuItem.Name = "imageRGBToolStripMenuItem";
-            this.imageRGBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.imageRGBToolStripMenuItem.Text = "Image RGB";
-            this.imageRGBToolStripMenuItem.Click += new System.EventHandler(this.imageRGBToolStripMenuItem_Click);
-            // 
-            // imageGrayScaleToolStripMenuItem
-            // 
-            this.imageGrayScaleToolStripMenuItem.Name = "imageGrayScaleToolStripMenuItem";
-            this.imageGrayScaleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.imageGrayScaleToolStripMenuItem.Text = "Image Gray Scale";
-            this.imageGrayScaleToolStripMenuItem.Click += new System.EventHandler(this.imageGrayScaleToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -227,12 +230,31 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Result Image";
             // 
+            // check
+            // 
+            this.check.AutoSize = true;
+            this.check.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.check.Location = new System.Drawing.Point(37, 524);
+            this.check.Name = "check";
+            this.check.Size = new System.Drawing.Size(155, 13);
+            this.check.TabIndex = 10;
+            this.check.Text = "Create by : Huynh Quoc Khanh";
+            this.check.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1282, 507);
+            this.ClientSize = new System.Drawing.Size(1282, 572);
+            this.Controls.Add(this.check);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn5x5);
@@ -275,6 +297,8 @@
         private System.Windows.Forms.ToolStripMenuItem imageGrayScaleToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Label check;
     }
 }
 

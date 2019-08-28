@@ -56,7 +56,14 @@ namespace ImageProcessing
             openfile.Filter = "Image Files(*.jpg,*.png,*.tiff,*.bmp,*.gif)|*.jpg;*.png;*.tiff;*.bmp;*.gif";// Lọc ra những file cần hiển thị
             //openfile.FilterIndex = 1;//chúng ta có All files là 1,exe là 2
             openfile.RestoreDirectory = true;
-
+            if (check.Text != "Create by : Huynh Quoc Khanh")
+            {
+                imageGrayScaleToolStripMenuItem.Enabled = false;
+                imageRGBToolStripMenuItem.Enabled = false;
+                convertToGrayToolStripMenuItem.Enabled = false;
+                convertToSEPIAToolStripMenuItem.Enabled = false;
+                filterToolStripMenuItem.Enabled = false;
+            }
             if (openfile.ShowDialog() == DialogResult.OK)
             {
                 //Tải ảnh lên
@@ -167,12 +174,13 @@ namespace ImageProcessing
         {
             if (stateChooseImage == true)
             {
-                Bitmap result = (Bitmap)picOrigin.Image;
+                Bitmap result = bmGraySave;
 
                 Image imgResult = ProcessImage.getOffsetGrayScale(result);
                 MessageBox.Show("Process Complete!", "INFO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Load Image
                 picResult.Image = imgResult;
+                picOrigin.Image = bmGraySave;
             }
             else
             {
@@ -190,17 +198,27 @@ namespace ImageProcessing
             offset = 3;
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Huynh Quoc Khanh - Image Processing", "INFO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void imageRGBToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (stateChooseImage == true)
             {
-                Bitmap result = bmGraySave;
+                Bitmap result = (Bitmap)picOrigin.Image;
 
-                Image imgResult = ProcessImage.getOffsetGrayScale(result);
+                Image imgResult = ProcessImage.getOffsetGRB(result);
                 MessageBox.Show("Process Complete!", "INFO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Load Image
                 picResult.Image = imgResult;
-                picOrigin.Image = bmGraySave;
             }
             else
             {
