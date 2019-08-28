@@ -46,6 +46,13 @@ namespace ImageProcessing
             }
             return result;
         }
+        /*
+         * Đây là hàm chuyển đổi ảnh từ kênh màu RGB sang Sepia
+         * Duyệt toàn bộ các pixel trong ma trận
+         * Tại mỗi điểm ta tính dựa trên công thức R * 0.299 + G * 0.587 + B *0.144
+         * Kiểm tra điều kiện R > 206 = 255 : G < 14 = 0: B < 14 = 0
+         * Xuất ảnh
+         */
         public static Bitmap convertRGBToSepia(Bitmap bitmap)
         {
             //Khởi tạo
